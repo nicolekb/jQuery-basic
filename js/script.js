@@ -49,7 +49,7 @@ $(function() {
   });
 
   //keydown
-  $('input').keydown(funtion(){
+  $('input').keydown(function(){
     if ($(this).val() != '') {
       $(this).css('border', 'solid 1px #777');
       $('#box').text('Thanks for that');
@@ -65,4 +65,75 @@ $(function() {
     $(this).text('you hovered out');
   });
 
+
+  /*--------------------
+  jQuery Chaining
+  -------------------- */
+  $('.notification-bar').delay(1000).slideDown().delay(1000).fadeOut();
+
+
+  /*--------------------
+  jQuery Hide/Show
+  -------------------- */
+  $('h1').hide();
+  $('div.hidden').show();
+
+  //fadein/fadeout toggle between 0 and 100% opacity
+  $('p').fadeOut();
+  $('p').fadeIn(8000);
+
+  // fadeTo - let's you adjust the opacity of elements
+  $('#box1').click(function(){
+    $(this).fadeTo(2000, 0.75, function(){ //2000 (time), opacity: 75%;
+      //animation is complete
+        //slideup/slidedown
+        $(this).slideUp();
+    });
+  }); // end of #box1.click function
+  $('div.hidden').slideDown();
+
+  //when you click the button, it will toggle.
+  $('button').click(function() {
+    $('#box1').slideToggle();
+  });
+
+
+  /*--------------------
+  jQuery Animation
+  -------------------- */
+  $('#left').click(function() {
+    $('.box').animate({
+      left: '-=40px',
+      fontsize: '+=2px'
+    }, function() {
+        //animation is complete
+    }); //end of second function
+  }); //end of left click
+
+  $('#up').click(function() {
+    $('.box').animate({
+      top: '-=40px',
+      opacity: '+=0.1'
+    }, function() {
+        //animation is complete
+    }); //end of second function
+  }); //end of up click
+
+  $('#right').click(function() {
+    $('.box').animate({
+      left: '+=40px',
+      opacity: '+=0.1'
+    }, function() {
+        //animation is complete
+    }); //end of second function
+  }); //end of right click
+
+  $('#down').click(function() {
+    $('.box').animate({
+      top: '+=40px',
+      opacity: '-=0.1'
+    }, function() {
+        //animation is complete
+    }); //end of second function
+  }); //end of down click
 });
