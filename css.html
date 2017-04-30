@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>jQuery CSS</title>
+
+        <link href="css/normalize.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <h1>jQuery CSS</h1>
+
+        <div id="circle1" class="circleShape">Styled with CSS</div>
+        <div id="circle2">Styled with jQuery</div>
+
+        <!-- CDN jQuery -->
+        <script
+          src="http://code.jquery.com/jquery-3.2.1.js"
+          integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+          crossorigin="anonymous">
+        </script>
+        <!-- if CDN fails to load, serve up bu local version -->
+        <script>window.jQuery || document.write ('<scipt src = "js/jquery-3.2.1.js"><\/script>');</script>
+        <script src ="js/script.js"> </script>
+    </body>
+
+</html>
